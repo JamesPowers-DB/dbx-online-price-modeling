@@ -1,0 +1,19 @@
+resources:
+  jobs:
+    data_generator_job:
+      name: "[${bundle.target}] 00 - Seed Raw Source Tables"
+      description: "One-time job to generate synthetic raw source data for the pricing demo"
+      tasks:
+        - task_key: seed_raw_tables
+          notebook_task:
+            notebook_path: ../src/notebooks/00_data_generator.py
+            base_parameters:
+              catalog: ${var.catalog}
+              raw_schema: ${var.raw_schema}
+              bronze_schema: ${var.bronze_schema}
+              silver_schema: ${var.silver_schema}
+              gold_schema: ${var.gold_schema}
+              ml_schema: ${var.ml_schema}
+      permissions:
+        - level: CAN_VIEW
+          group_name: "users"

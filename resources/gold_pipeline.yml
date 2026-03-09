@@ -1,0 +1,19 @@
+resources:
+  pipelines:
+    gold_features_pipeline:
+      name: "[${bundle.target}] 03 - Gold Pricing Features Pipeline"
+      catalog: ${var.catalog}
+      target: ${var.gold_schema}
+      configuration:
+        catalog: ${var.catalog}
+        silver_schema: ${var.silver_schema}
+        raw_schema: ${var.raw_schema}
+        gold_schema: ${var.gold_schema}
+      libraries:
+        - glob:
+            include: ../src/pipelines/gold_features/transformations/**
+      serverless: true
+      channel: "CURRENT"
+      permissions:
+        - level: CAN_VIEW
+          group_name: "users"

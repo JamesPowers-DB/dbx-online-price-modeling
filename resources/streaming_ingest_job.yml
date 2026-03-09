@@ -1,0 +1,30 @@
+resources:
+  jobs:
+    streaming_ingest_job:
+      name: "[${bundle.target}] 01-02 - Bronze + Silver Streaming Ingest"
+      description: "Multi-task streaming pipeline: Auto Loader Bronze ingest → Silver dedup + enrich"
+      tasks:
+        - task_key: bronze_ingest
+          description: "Read raw event tables via readStream, add metadata, write to bronze"
+          notebook_task:
+            notebook_path: ../src/notebooks/01_bronze_streaming_ingest.py
+            base_parameters:
+              catalog: ${var.catalog}
+              raw_schema: ${var.raw_schema}
+              bronze_schema: ${var.bronze_schema}
+
+        - task_key: silver_transform
+          description: "Dedup, validate, and enrich bronze streams into silver tables"
+          depends_on:
+            - task_key: bronze_ingest
+          notebook_task:
+            notebook_path: ../src/notebooks/02_silver_transform.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.bronze_schema}
+              silver_schema: ${var.silver_schema}
+              raw_schema: ${var.raw_schema}
+
+      permissions:
+        - level: CAN_VIEW
+          group_name: "users"

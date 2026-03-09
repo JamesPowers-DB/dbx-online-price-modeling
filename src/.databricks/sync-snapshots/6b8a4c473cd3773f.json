@@ -1,0 +1,35 @@
+{
+  "version": "v1",
+  "host": "https://e2-demo-field-eng.cloud.databricks.com",
+  "remote_path": "/Users/james.powers@databricks.com/.bundle/online-price-modeling/dev/files/src",
+  "last_modified_times": {
+    "notebooks/00_data_generator.py": "2026-03-07T20:46:08.522557959-06:00",
+    "notebooks/01_bronze_streaming_ingest.py": "2026-03-07T21:43:19.337813908-06:00",
+    "notebooks/02_silver_transform.py": "2026-03-07T20:46:47.591307858-06:00",
+    "notebooks/04_model_train_register.py": "2026-03-08T22:54:16.195901195-05:00",
+    "notebooks/04_pricing_endpoint_demo.py": "2026-03-07T20:48:41.835093397-06:00",
+    "notebooks/05_LIVE_DEMO_genie_code.py": "2026-03-07T20:49:12.500394073-06:00",
+    "pipelines/gold_features/transformations/gold_feature_mart.sql": "2026-03-07T20:47:13.418999388-06:00",
+    "pipelines/gold_features/transformations/gold_pricing_features.sql": "2026-03-07T22:38:47.116998327-06:00"
+  },
+  "local_to_remote_names": {
+    "notebooks/00_data_generator.py": "notebooks/00_data_generator",
+    "notebooks/01_bronze_streaming_ingest.py": "notebooks/01_bronze_streaming_ingest",
+    "notebooks/02_silver_transform.py": "notebooks/02_silver_transform",
+    "notebooks/04_model_train_register.py": "notebooks/04_model_train_register",
+    "notebooks/04_pricing_endpoint_demo.py": "notebooks/04_pricing_endpoint_demo",
+    "notebooks/05_LIVE_DEMO_genie_code.py": "notebooks/05_LIVE_DEMO_genie_code",
+    "pipelines/gold_features/transformations/gold_feature_mart.sql": "pipelines/gold_features/transformations/gold_feature_mart.sql",
+    "pipelines/gold_features/transformations/gold_pricing_features.sql": "pipelines/gold_features/transformations/gold_pricing_features.sql"
+  },
+  "remote_to_local_names": {
+    "notebooks/00_data_generator": "notebooks/00_data_generator.py",
+    "notebooks/01_bronze_streaming_ingest": "notebooks/01_bronze_streaming_ingest.py",
+    "notebooks/02_silver_transform": "notebooks/02_silver_transform.py",
+    "notebooks/04_model_train_register": "notebooks/04_model_train_register.py",
+    "notebooks/04_pricing_endpoint_demo": "notebooks/04_pricing_endpoint_demo.py",
+    "notebooks/05_LIVE_DEMO_genie_code": "notebooks/05_LIVE_DEMO_genie_code.py",
+    "pipelines/gold_features/transformations/gold_feature_mart.sql": "pipelines/gold_features/transformations/gold_feature_mart.sql",
+    "pipelines/gold_features/transformations/gold_pricing_features.sql": "pipelines/gold_features/transformations/gold_pricing_features.sql"
+  }
+}

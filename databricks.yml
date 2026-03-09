@@ -1,0 +1,29 @@
+bundle:
+  name: online-price-modeling
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    default: "hardware_sku_demo"
+  raw_schema:
+    default: "raw"
+  bronze_schema:
+    default: "bronze"
+  silver_schema:
+    default: "silver"
+  gold_schema:
+    default: "gold"
+  ml_schema:
+    default: "ml"
+
+targets:
+  dev:
+    default: true
+    mode: development
+    workspace:
+      host: https://e2-demo-field-eng.cloud.databricks.com
+      profile: aws-e2-demo-field-eng
+    variables:
+      catalog: "hardware_sku_demo"
